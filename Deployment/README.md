@@ -1,5 +1,5 @@
 
-# 🧠 ML Chatbot Project
+# 🧠 AI Chatbot Project
 
 ## 📁 Project Structure
 
