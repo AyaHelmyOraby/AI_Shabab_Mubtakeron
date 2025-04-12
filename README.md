@@ -1,24 +1,35 @@
-# Mental Health Support Chatbot
+# 🧠 Mental Health Support Chatbot
 
-## Overview
-A web-based AI assistant that provides mental health resources by analyzing multiple knowledge sources (JSON/PDF) using LangChain and ChromaDB vector storage.
+## 🗂️ Overview  
+A **web-based AI assistant** that provides mental health resources by analyzing multiple knowledge sources (**JSON/PDF**) using **LangChain** and **ChromaDB** vector storage.
 
-## Core Features
-- **Multi-source knowledge integration** (2 JSON formats + PDF)
-- **Conversational web interface** with formatted responses
-- **Source attribution** - shows origin of each response
-- **Persistent memory** via ChromaDB
-- **Easy deployment** (local/Docker/cloud)
+---
 
-## Quick Start
+## 🌟 Core Features  
+- ✅ **Multi-source knowledge integration**  
+  • Supports **2 JSON formats + PDF**
 
-# Install dependencies
-`
+- 💬 **Conversational web interface**  
+  • Clean and formatted AI responses
+
+- 📚 **Source attribution**  
+  • Clearly shows the **origin** of each response
+
+- 💾 **Persistent memory**  
+  • Stores embeddings and chat history using **ChromaDB**
+
+
+---
+
+## ⚡ Quick Start
+
+### 📦 Install dependencies  
+```bash
 pip install -r requirements.txt
-`
+```
 
-# Launch server
-`
+## Launch server
+```
 python deployment.py
-`
-# ➡️ Access at: http://localhost:8000
+```
+### ➡️ Access at: http://localhost:8000
