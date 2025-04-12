@@ -1,4 +1,4 @@
-# 🧠 Mental Health Support Chatbot
+# 🧠 Mental Health Chatbot
 
 ## 🗂️ Overview  
 A **web-based AI assistant** that provides mental health resources by analyzing multiple knowledge sources (**JSON/PDF**) using **LangChain** and **ChromaDB** vector storage.
