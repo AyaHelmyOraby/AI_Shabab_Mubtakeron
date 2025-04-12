@@ -58,6 +58,8 @@ This is a **web-based chatbot application** built using:
 4. **Run the app**
    ```bash
    uvicorn deployment:app --reload --port 8001
+   or
+   py deployment.py
    ```
 
 5. **Visit in browser**
