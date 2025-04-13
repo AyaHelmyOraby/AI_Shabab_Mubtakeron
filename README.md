@@ -33,3 +33,67 @@ pip install -r requirements.txt
 python deployment.py
 ```
 ### ➡️ Access at: http://localhost:8000
+
+
+
+
+## Project Guide Map
+
+## 📌 Features
+
+- ✅ JSON intent and PDF document ingestion
+- ✅ Chunking and embedding with HuggingFace
+- ✅ Context-aware Retrieval QA using LangChain
+- ✅ FastAPI backend with HTML chat interface
+- ✅ Persisted vector store using Chroma
+- ✅ Pluggable LLM backend (uses `llama3-70b-8192` via Groq)
+- ✅ Source document traceability
+
+---
+### 1. Project Definition & Goal
+- Build an LLM-powered mental health chatbot.
+- Use context from structured intents and PDFs.
+- Serve a clear, empathetic answer through a web interface.
+
+### 2. Data Acquisition & Exploration
+- 📁 JSON files (`intents.json`) with Q&A patterns.
+- 📄 PDF files (`sample_data/`) as extra knowledge.
+- Documents split into chunks for vector storage.
+- Exploratory: simple loading, type checks, error handling.
+
+### 3. Data Preprocessing
+- Missing/invalid formats handled in loading loop.
+- Text split using `RecursiveCharacterTextSplitter`.
+- Embedding generated using `HuggingFaceBgeEmbeddings`.
+- Stored in a persistent `Chroma` vector database.
+
+### 4. Model Selection & Training
+- **LLM Used:** `llama3-70b-8192` via `ChatGroq`.
+- Retrieval with `LangChain RetrievalQA`.
+- No model training — context passed directly to model for zero-shot answers.
+
+
+### 5. Interpretation & Communication
+- Answers returned from `/chat` endpoint with source metadata.
+- Web interface built using Jinja2 + HTML.
+- Answers clearly tagged with source (PDF / JSON).
+
+### 6. Deployment
+- FastAPI + `uvicorn` server.
+- Auto port discovery for local deployment.
+- Frontend rendered at `/` using `chat.html`.
+
+---
+
+## 💻 Tech Stack
+
+| Component         | Tool / Library                                |
+|------------------|------------------------------------------------|
+| Backend API       | FastAPI                                        |
+| Vector DB         | Chroma                                         |
+| Embeddings        | HuggingFace (`sentence-transformers`)         |
+| LLM               | ChatGroq (`llama3-70b-8192`)                   |
+| Text Splitting    | LangChain `RecursiveCharacterTextSplitter`    |
+| PDF Loader        | `PyPDFLoader`                                  |
+| Templating        | Jinja2                                         |
+| Deployment        | `uvicorn` with dynamic port handling          |
