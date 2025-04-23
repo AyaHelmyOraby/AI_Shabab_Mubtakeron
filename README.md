@@ -112,3 +112,58 @@ python deployment.py
 | **PDF Loader – PyPDFLoader**           | Loads and parses content from PDF files to prepare for embedding and search.                            |
 | **Templating – Jinja2**                | Python templating engine for rendering dynamic HTML or structured responses.                            |
 | **Deployment – uvicorn**               | Runs the FastAPI app using an ASGI server with dynamic port support, ideal for scalable deployments.    |
+
+
+
+# 🔍 What This Code Does (in Simple Terms)
+
+✅ **Loads data** from JSON (intents) and PDF files.
+
+✅ **Converts them into documents** with metadata.
+
+✅ **Splits the documents** into smaller chunks.
+
+✅ **Creates embeddings** using a pretrained model (`HuggingFaceBgeEmbeddings`).
+
+✅ **Stores the vectors** in a **Chroma vector store** (a type of database for embeddings).
+
+✅ **Uses a powerful pretrained LLM** (LLaMA 3 via **ChatGroq**) to generate answers.
+
+✅ **Exposes the QA system** via a **FastAPI endpoint**.
+
+---
+
+## ❌ Does it *train* a model?
+
+No. It does **NOT** train a new machine learning or deep learning model from scratch.
+
+Instead, it does this:
+
+---
+
+## 🧠 Pretrained Models Used
+
+- **Embedding model**: `sentence-transformers/all-MiniLM-L6-v2`
+- **LLM**: `llama3-70b-8192` (served via **Groq**)
+
+---
+
+## 🧮 What It *Does* Do
+
+- **Embeds texts** (vectorizes them) and stores them
+- Uses **RetrievalQA**, which performs **retrieval-augmented generation (RAG)**
+
+---
+
+## 🔄 So How Does It *Behave Like Training*?
+
+The only “learning-like” aspect is:
+
+> Embedding the intents and PDFs into vector space to enable **semantic search**.
+
+This is not full training, but rather a **data preparation + embedding step**.
+
+Embedding the intents and PDFs into vector space to enable semantic search.
+
+This is not full training, but rather a data preparation + embedding step.
+
