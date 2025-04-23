@@ -97,3 +97,18 @@ python deployment.py
 | PDF Loader        | `PyPDFLoader`                                  |
 | Templating        | Jinja2                                         |
 | Deployment        | `uvicorn` with dynamic port handling          |
+
+---
+
+## 🧠 Component Breakdown
+
+| Component                              | Explanation                                                                                              |
+|----------------------------------------|----------------------------------------------------------------------------------------------------------|
+| **Backend API – FastAPI**              | A modern Python web framework used to build and serve your chatbot’s API. Fast and easy to use.         |
+| **Vector DB – Chroma**                 | Stores text data for semantic search. Handles embeddings and fast document retrieval.                   |
+| **Embeddings – HuggingFace**           | Uses `sentence-transformers` to convert text into vectors capturing semantic meaning.                   |
+| **LLM – ChatGroq (llama3-70b-8192)**   | A large language model running on Groq hardware for fast and accurate response generation.              |
+| **Text Splitting – LangChain**         | `RecursiveCharacterTextSplitter` splits long texts into chunks while preserving context.                |
+| **PDF Loader – PyPDFLoader**           | Loads and parses content from PDF files to prepare for embedding and search.                            |
+| **Templating – Jinja2**                | Python templating engine for rendering dynamic HTML or structured responses.                            |
+| **Deployment – uvicorn**               | Runs the FastAPI app using an ASGI server with dynamic port support, ideal for scalable deployments.    |
